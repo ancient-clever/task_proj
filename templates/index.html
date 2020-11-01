@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+Files index
+{% endblock %}
+
+{% block content %}
+<h1>Files</h1>
+<p>
+  <ul>
+    {% for file in files %}
+    <li>
+      <a href="/download/{{ file.identifier }}">
+        {{ file.filename }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</p>
+
+<p>
+  <a href="/upload">Upload files</a>
+</p>
+
+{% endblock %}

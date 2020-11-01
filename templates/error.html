@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}
+Errors
+{% endblock %}
+
+{% block content %}
+<h1>Errors</h1>
+<p>
+  <ul>
+    {% for error in errors %}
+    <li>
+        {{ error.filename }}: {{ error.message }}
+    </li>
+    {% endfor %}
+  </ul>
+</p>
+
+<p>
+  <a href="/">Go back to files</a>
+</p>
+{% endblock %}
