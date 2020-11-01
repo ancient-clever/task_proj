@@ -79,7 +79,6 @@ async def new_file_upload(request: web.Request) -> Dict[str, Any]:
             )
             continue
 
-        size = 0
         logger("INFO", "file {} start uploading".format(filename))
         # write file in chunks
         with open(dst_path, 'wb') as f:
@@ -88,7 +87,6 @@ async def new_file_upload(request: web.Request) -> Dict[str, Any]:
                 if not chunk:
                     logger("INFO", "file {} uploaded".format(filename))
                     break
-                size += len(chunk)
                 f.write(chunk)
 
             # create a new record in db
