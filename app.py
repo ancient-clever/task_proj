@@ -40,7 +40,6 @@ async def index(request: web.Request) -> Dict[str, Any]:
 @aiohttp_jinja2.template("upload.html")
 async def new_file(request: web.Request) -> Dict[str, Any]:
     """Page with html form for uploading"""
-    logging.getLogger()
     return {}
 
 
